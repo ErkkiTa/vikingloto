@@ -11,12 +11,10 @@
 
   if (isset($action)) {
     if (empty($email)) {
-      echo 'email not valid';
+      echo 'Email puudub või pole õige';
     }
 
     if ($game == 'automatic') {
-      //generate 6 number
-      //rand(1,48);
       $randomNumbers = array_rand(range(1, 48), 6);
 
       print_r($randomNumbers);
@@ -29,17 +27,15 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <title>Viking lotto</title>
   </head>
   <body>
     <div class="container">
+
       <form method="POST">
         <div class="col-4">
           <div class="form-group">
@@ -63,20 +59,17 @@
         </div>
         <div class="col-8">
           <?php if ($showManualNumbers) : ?>
-
               <?php foreach (range(1, 48) as $number) : ?>
                 <input type="checkbox" name="number[]" value="<?php echo $number ?>"> <?php echo $number ?>
               <?php endforeach; ?>
-
           <?php endif; ?>
         </div>
-        <button type="submit" class="btn btn-primary" name="action" value="start">Submit</button>
+            <button type="submit" class="btn btn-primary" name="action" value="start">Submit</button>
       </form>
 
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
